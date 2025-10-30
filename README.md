@@ -2,6 +2,16 @@
 
 Outil professionnel de questionnaire de sécurité pour l'audit des applications web et infrastructure. Basé sur les standards OWASP Top 10, ISO 27001 et les recommandations de l'ANSSI.
 
+## 🚀 Application en Ligne
+
+**🔗 DEMO EN DIRECT :** https://app-security-audit.streamlit.app/
+
+Essayez l'application immédiatement, aucune installation requise !
+
+**Version Streamlit** : Déploiement cloud facile | **Version React+Flask** : Production scalable
+
+---
+
 ## Vue d'ensemble
 
 Cet outil permet d'évaluer rapidement le niveau de sécurité d'applications et d'identifier celles nécessitant un audit complet. Conçu pour gérer l'audit de centaines d'applications simultanément (jusqu'à 800+).

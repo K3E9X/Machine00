@@ -4,6 +4,12 @@ Outil professionnel de questionnaire de sécurité pour l'audit des applications
 
 **Version Streamlit optimisée pour le déploiement cloud facile**
 
+## 🚀 Application en Ligne
+
+**🔗 DEMO EN DIRECT :** https://app-security-audit.streamlit.app/
+
+Essayez l'application immédiatement, aucune installation requise !
+
 ## Démarrage rapide
 
 ### Installation locale
