@@ -1,0 +1,77 @@
+{
+  "app": {
+    "title": "Application Security Assessment",
+    "subtitle": "Questionnaire based on OWASP Top 10, ISO 27001 and ANSSI"
+  },
+  "nav": {
+    "home": "Home",
+    "questionnaire": "Questionnaire",
+    "results": "Results"
+  },
+  "home": {
+    "welcome": "Welcome",
+    "description": "This tool allows you to quickly assess the security level of your web applications and identify those requiring a thorough audit.",
+    "features": {
+      "title": "Features",
+      "feature1": "Structured questionnaire based on international standards",
+      "feature2": "Automatic scoring and category-wise analysis",
+      "feature3": "Personalized recommendations",
+      "feature4": "Excel export for client sharing",
+      "feature5": "Multi-language support (French/English)",
+      "feature6": "Modern and intuitive interface"
+    },
+    "start": "Start Assessment",
+    "template": "Download Excel Template"
+  },
+  "questionnaire": {
+    "title": "Security Questionnaire",
+    "appInfo": "Application Information",
+    "appName": "Application Name",
+    "appNamePlaceholder": "Ex: CRM Application",
+    "owner": "Owner",
+    "ownerPlaceholder": "Ex: Business Unit",
+    "contact": "Contact",
+    "contactPlaceholder": "Ex: john.doe@company.com",
+    "environment": "Environment",
+    "description": "Description",
+    "descriptionPlaceholder": "Brief application description",
+    "progress": "Progress",
+    "category": "Category",
+    "question": "Question",
+    "selectAnswer": "Select an answer",
+    "previous": "Previous",
+    "next": "Next",
+    "submit": "Submit Assessment",
+    "required": "Please answer all questions before submitting"
+  },
+  "results": {
+    "title": "Assessment Results",
+    "overallScore": "Overall Score",
+    "riskLevel": "Risk Level",
+    "recommendation": "Recommendation",
+    "categoryBreakdown": "Category Breakdown",
+    "recommendations": "Improvement Recommendations",
+    "noRecommendations": "Excellent work! No critical recommendations.",
+    "severity": "Severity",
+    "high": "High",
+    "medium": "Medium",
+    "standards": "Standards",
+    "exportExcel": "Export to Excel",
+    "newAssessment": "New Assessment",
+    "auditRequired": {
+      "FULL_AUDIT_REQUIRED": "Full audit required",
+      "TARGETED_AUDIT_RECOMMENDED": "Targeted audit recommended",
+      "LIGHT_REVIEW": "Light review sufficient"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "save": "Save",
+    "close": "Close",
+    "back": "Back",
+    "export": "Export"
+  }
+}
