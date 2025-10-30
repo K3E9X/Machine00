@@ -1,0 +1,77 @@
+{
+  "app": {
+    "title": "Évaluation de Sécurité Applicative",
+    "subtitle": "Questionnaire basé sur OWASP Top 10, ISO 27001 et ANSSI"
+  },
+  "nav": {
+    "home": "Accueil",
+    "questionnaire": "Questionnaire",
+    "results": "Résultats"
+  },
+  "home": {
+    "welcome": "Bienvenue",
+    "description": "Cet outil vous permet d'évaluer rapidement le niveau de sécurité de vos applications web et d'identifier celles nécessitant un audit approfondi.",
+    "features": {
+      "title": "Fonctionnalités",
+      "feature1": "Questionnaire structuré basé sur les standards internationaux",
+      "feature2": "Scoring automatique et analyse par catégorie",
+      "feature3": "Recommandations personnalisées",
+      "feature4": "Export Excel pour partage avec les clients",
+      "feature5": "Support multilingue (Français/Anglais)",
+      "feature6": "Interface moderne et intuitive"
+    },
+    "start": "Démarrer une évaluation",
+    "template": "Télécharger le modèle Excel"
+  },
+  "questionnaire": {
+    "title": "Questionnaire de Sécurité",
+    "appInfo": "Informations Application",
+    "appName": "Nom de l'application",
+    "appNamePlaceholder": "Ex: Application CRM",
+    "owner": "Propriétaire",
+    "ownerPlaceholder": "Ex: Direction Métier",
+    "contact": "Contact",
+    "contactPlaceholder": "Ex: john.doe@company.com",
+    "environment": "Environnement",
+    "description": "Description",
+    "descriptionPlaceholder": "Brève description de l'application",
+    "progress": "Progression",
+    "category": "Catégorie",
+    "question": "Question",
+    "selectAnswer": "Sélectionnez une réponse",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "submit": "Soumettre l'évaluation",
+    "required": "Veuillez répondre à toutes les questions avant de soumettre"
+  },
+  "results": {
+    "title": "Résultats de l'Évaluation",
+    "overallScore": "Score Global",
+    "riskLevel": "Niveau de Risque",
+    "recommendation": "Recommandation",
+    "categoryBreakdown": "Détail par Catégorie",
+    "recommendations": "Recommandations d'Amélioration",
+    "noRecommendations": "Excellent travail ! Aucune recommandation critique.",
+    "severity": "Sévérité",
+    "high": "Élevée",
+    "medium": "Moyenne",
+    "standards": "Standards",
+    "exportExcel": "Exporter en Excel",
+    "newAssessment": "Nouvelle évaluation",
+    "auditRequired": {
+      "FULL_AUDIT_REQUIRED": "Audit complet requis",
+      "TARGETED_AUDIT_RECOMMENDED": "Audit ciblé recommandé",
+      "LIGHT_REVIEW": "Revue légère suffisante"
+    }
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "close": "Fermer",
+    "back": "Retour",
+    "export": "Exporter"
+  }
+}

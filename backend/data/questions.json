@@ -1,0 +1,697 @@
+{
+  "categories": [
+    {
+      "id": "iam",
+      "name": {
+        "fr": "Gestion des Identités et des Accès (IAM)",
+        "en": "Identity and Access Management (IAM)"
+      },
+      "weight": 20,
+      "questions": [
+        {
+          "id": "iam_001",
+          "text": {
+            "fr": "L'application implémente-t-elle une authentification multi-facteurs (MFA) ?",
+            "en": "Does the application implement multi-factor authentication (MFA)?"
+          },
+          "category": "iam",
+          "weight": 5,
+          "standard": ["OWASP A07", "ISO 27001 A.9.4.2"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non", "en": "No"}},
+            {"value": 5, "label": {"fr": "Partiellement (certains utilisateurs)", "en": "Partially (some users)"}},
+            {"value": 10, "label": {"fr": "Oui, pour tous les utilisateurs privilégiés", "en": "Yes, for all privileged users"}},
+            {"value": 15, "label": {"fr": "Oui, pour tous les utilisateurs", "en": "Yes, for all users"}}
+          ]
+        },
+        {
+          "id": "iam_002",
+          "text": {
+            "fr": "Existe-t-il une politique de mots de passe conforme (longueur, complexité, expiration) ?",
+            "en": "Is there a compliant password policy (length, complexity, expiration)?"
+          },
+          "category": "iam",
+          "weight": 4,
+          "standard": ["OWASP A07", "ISO 27001 A.9.4.3", "ANSSI"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non", "en": "No"}},
+            {"value": 3, "label": {"fr": "Partiellement (certains critères)", "en": "Partially (some criteria)"}},
+            {"value": 7, "label": {"fr": "Oui, conforme aux recommandations", "en": "Yes, compliant with recommendations"}},
+            {"value": 10, "label": {"fr": "Oui, avec contrôles avancés (liste noire, historique)", "en": "Yes, with advanced controls (blacklist, history)"}}
+          ]
+        },
+        {
+          "id": "iam_003",
+          "text": {
+            "fr": "L'application utilise-t-elle un système de gestion des sessions sécurisé ?",
+            "en": "Does the application use a secure session management system?"
+          },
+          "category": "iam",
+          "weight": 5,
+          "standard": ["OWASP A07", "ISO 27001 A.14.2.5"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non / Ne sait pas", "en": "No / Don't know"}},
+            {"value": 4, "label": {"fr": "Basique (timeout simple)", "en": "Basic (simple timeout)"}},
+            {"value": 8, "label": {"fr": "Avancé (rotation de tokens, timeout adaptatif)", "en": "Advanced (token rotation, adaptive timeout)"}},
+            {"value": 10, "label": {"fr": "Très avancé (détection anomalies, révocation)", "en": "Very advanced (anomaly detection, revocation)"}}
+          ]
+        },
+        {
+          "id": "iam_004",
+          "text": {
+            "fr": "Un système de gestion des habilitations (RBAC/ABAC) est-il en place ?",
+            "en": "Is a role-based/attribute-based access control system (RBAC/ABAC) in place?"
+          },
+          "category": "iam",
+          "weight": 4,
+          "standard": ["ISO 27001 A.9.4.1", "ANSSI"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non", "en": "No"}},
+            {"value": 3, "label": {"fr": "Contrôles basiques", "en": "Basic controls"}},
+            {"value": 7, "label": {"fr": "RBAC implémenté", "en": "RBAC implemented"}},
+            {"value": 10, "label": {"fr": "ABAC ou système avancé", "en": "ABAC or advanced system"}}
+          ]
+        },
+        {
+          "id": "iam_005",
+          "text": {
+            "fr": "Les comptes privilégiés sont-ils séparés des comptes utilisateurs standards ?",
+            "en": "Are privileged accounts separated from standard user accounts?"
+          },
+          "category": "iam",
+          "weight": 4,
+          "standard": ["ISO 27001 A.9.2.3", "ANSSI"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non", "en": "No"}},
+            {"value": 5, "label": {"fr": "Partiellement", "en": "Partially"}},
+            {"value": 10, "label": {"fr": "Oui, totalement séparés", "en": "Yes, fully separated"}}
+          ]
+        },
+        {
+          "id": "iam_006",
+          "text": {
+            "fr": "L'application intègre-t-elle un SSO (Single Sign-On) d'entreprise ?",
+            "en": "Does the application integrate with enterprise SSO (Single Sign-On)?"
+          },
+          "category": "iam",
+          "weight": 3,
+          "standard": ["ISO 27001 A.9.4.2"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non", "en": "No"}},
+            {"value": 3, "label": {"fr": "En cours d'implémentation", "en": "Under implementation"}},
+            {"value": 7, "label": {"fr": "Oui (SAML/OAuth/OIDC)", "en": "Yes (SAML/OAuth/OIDC)"}},
+            {"value": 10, "label": {"fr": "Oui avec fédération d'identités", "en": "Yes with identity federation"}}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "network_architecture",
+      "name": {
+        "fr": "Architecture Réseau et Segmentation",
+        "en": "Network Architecture and Segmentation"
+      },
+      "weight": 18,
+      "questions": [
+        {
+          "id": "net_001",
+          "text": {
+            "fr": "L'application est-elle déployée dans une architecture réseau segmentée (DMZ, zones de confiance) ?",
+            "en": "Is the application deployed in a segmented network architecture (DMZ, trust zones)?"
+          },
+          "category": "network_architecture",
+          "weight": 5,
+          "standard": ["ISO 27001 A.13.1.3", "ANSSI"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non / Réseau plat", "en": "No / Flat network"}},
+            {"value": 4, "label": {"fr": "Segmentation basique", "en": "Basic segmentation"}},
+            {"value": 8, "label": {"fr": "Segmentation avec DMZ", "en": "Segmentation with DMZ"}},
+            {"value": 10, "label": {"fr": "Micro-segmentation / Zero Trust", "en": "Micro-segmentation / Zero Trust"}}
+          ]
+        },
+        {
+          "id": "net_002",
+          "text": {
+            "fr": "Des pare-feu (firewall) sont-ils déployés entre les différentes zones réseau ?",
+            "en": "Are firewalls deployed between different network zones?"
+          },
+          "category": "network_architecture",
+          "weight": 5,
+          "standard": ["ISO 27001 A.13.1.1", "ANSSI"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non", "en": "No"}},
+            {"value": 4, "label": {"fr": "Pare-feu périmétrique uniquement", "en": "Perimeter firewall only"}},
+            {"value": 8, "label": {"fr": "Pare-feu multi-zones", "en": "Multi-zone firewalls"}},
+            {"value": 10, "label": {"fr": "WAF + pare-feu applicatif + réseau", "en": "WAF + application + network firewalls"}}
+          ]
+        },
+        {
+          "id": "net_003",
+          "text": {
+            "fr": "Un WAF (Web Application Firewall) protège-t-il l'application web ?",
+            "en": "Is the web application protected by a WAF (Web Application Firewall)?"
+          },
+          "category": "network_architecture",
+          "weight": 4,
+          "standard": ["OWASP Top 10", "ANSSI"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non", "en": "No"}},
+            {"value": 4, "label": {"fr": "WAF basique", "en": "Basic WAF"}},
+            {"value": 7, "label": {"fr": "WAF avec règles OWASP", "en": "WAF with OWASP rules"}},
+            {"value": 10, "label": {"fr": "WAF avancé avec ML/IA", "en": "Advanced WAF with ML/AI"}}
+          ]
+        },
+        {
+          "id": "net_004",
+          "text": {
+            "fr": "Les flux réseau sont-ils documentés et validés (matrice de flux) ?",
+            "en": "Are network flows documented and validated (flow matrix)?"
+          },
+          "category": "network_architecture",
+          "weight": 4,
+          "standard": ["ISO 27001 A.13.1.1", "ANSSI"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non documenté", "en": "Not documented"}},
+            {"value": 3, "label": {"fr": "Documentation partielle", "en": "Partial documentation"}},
+            {"value": 7, "label": {"fr": "Documentation complète", "en": "Complete documentation"}},
+            {"value": 10, "label": {"fr": "Documentation + révision régulière", "en": "Documentation + regular review"}}
+          ]
+        },
+        {
+          "id": "net_005",
+          "text": {
+            "fr": "Les communications réseau sont-elles chiffrées (TLS/SSL) ?",
+            "en": "Are network communications encrypted (TLS/SSL)?"
+          },
+          "category": "network_architecture",
+          "weight": 5,
+          "standard": ["OWASP A02", "ISO 27001 A.10.1.1"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non / HTTP uniquement", "en": "No / HTTP only"}},
+            {"value": 4, "label": {"fr": "HTTPS pour certains flux", "en": "HTTPS for some flows"}},
+            {"value": 8, "label": {"fr": "HTTPS partout (TLS 1.2+)", "en": "HTTPS everywhere (TLS 1.2+)"}},
+            {"value": 10, "label": {"fr": "TLS 1.3 + Perfect Forward Secrecy", "en": "TLS 1.3 + Perfect Forward Secrecy"}}
+          ]
+        },
+        {
+          "id": "net_006",
+          "text": {
+            "fr": "Un système de détection/prévention d'intrusion (IDS/IPS) est-il en place ?",
+            "en": "Is an intrusion detection/prevention system (IDS/IPS) in place?"
+          },
+          "category": "network_architecture",
+          "weight": 3,
+          "standard": ["ISO 27001 A.13.1.1", "ANSSI"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non", "en": "No"}},
+            {"value": 3, "label": {"fr": "IDS uniquement", "en": "IDS only"}},
+            {"value": 7, "label": {"fr": "IPS actif", "en": "Active IPS"}},
+            {"value": 10, "label": {"fr": "IPS + corrélation SIEM", "en": "IPS + SIEM correlation"}}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "interconnections",
+      "name": {
+        "fr": "Flux et Interconnexions",
+        "en": "Flows and Interconnections"
+      },
+      "weight": 15,
+      "questions": [
+        {
+          "id": "inter_001",
+          "text": {
+            "fr": "Les API exposées sont-elles sécurisées (authentification, autorisation) ?",
+            "en": "Are exposed APIs secured (authentication, authorization)?"
+          },
+          "category": "interconnections",
+          "weight": 5,
+          "standard": ["OWASP API Top 10", "ISO 27001 A.14.1.2"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non / Pas d'API", "en": "No / No APIs"}},
+            {"value": 4, "label": {"fr": "Authentification basique", "en": "Basic authentication"}},
+            {"value": 8, "label": {"fr": "OAuth2/JWT + rate limiting", "en": "OAuth2/JWT + rate limiting"}},
+            {"value": 10, "label": {"fr": "API Gateway + sécurité avancée", "en": "API Gateway + advanced security"}}
+          ]
+        },
+        {
+          "id": "inter_002",
+          "text": {
+            "fr": "Les connexions vers des systèmes tiers sont-elles sécurisées et contrôlées ?",
+            "en": "Are connections to third-party systems secured and controlled?"
+          },
+          "category": "interconnections",
+          "weight": 4,
+          "standard": ["ISO 27001 A.13.2.1", "ANSSI"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non documenté", "en": "Not documented"}},
+            {"value": 3, "label": {"fr": "Connexions identifiées", "en": "Connections identified"}},
+            {"value": 7, "label": {"fr": "Connexions sécurisées (VPN/TLS)", "en": "Secured connections (VPN/TLS)"}},
+            {"value": 10, "label": {"fr": "Contrôles stricts + surveillance", "en": "Strict controls + monitoring"}}
+          ]
+        },
+        {
+          "id": "inter_003",
+          "text": {
+            "fr": "Les données échangées avec les systèmes tiers sont-elles chiffrées ?",
+            "en": "Is data exchanged with third-party systems encrypted?"
+          },
+          "category": "interconnections",
+          "weight": 4,
+          "standard": ["OWASP A02", "ISO 27001 A.10.1.1"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non", "en": "No"}},
+            {"value": 4, "label": {"fr": "Partiellement", "en": "Partially"}},
+            {"value": 8, "label": {"fr": "Oui, en transit", "en": "Yes, in transit"}},
+            {"value": 10, "label": {"fr": "Oui, en transit et au repos", "en": "Yes, in transit and at rest"}}
+          ]
+        },
+        {
+          "id": "inter_004",
+          "text": {
+            "fr": "Un système de passerelle/proxy contrôle-t-il les flux sortants ?",
+            "en": "Does a gateway/proxy system control outbound flows?"
+          },
+          "category": "interconnections",
+          "weight": 3,
+          "standard": ["ISO 27001 A.13.1.1", "ANSSI"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non", "en": "No"}},
+            {"value": 3, "label": {"fr": "Proxy basique", "en": "Basic proxy"}},
+            {"value": 7, "label": {"fr": "Proxy avec filtrage", "en": "Proxy with filtering"}},
+            {"value": 10, "label": {"fr": "Passerelle sécurisée + inspection", "en": "Secure gateway + inspection"}}
+          ]
+        },
+        {
+          "id": "inter_005",
+          "text": {
+            "fr": "Les interconnexions sont-elles soumises à des tests de sécurité réguliers ?",
+            "en": "Are interconnections subject to regular security testing?"
+          },
+          "category": "interconnections",
+          "weight": 4,
+          "standard": ["ISO 27001 A.14.2.8"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non", "en": "No"}},
+            {"value": 3, "label": {"fr": "Tests ponctuels", "en": "Ad-hoc testing"}},
+            {"value": 7, "label": {"fr": "Tests annuels", "en": "Annual testing"}},
+            {"value": 10, "label": {"fr": "Tests continus/automatisés", "en": "Continuous/automated testing"}}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hosting_infrastructure",
+      "name": {
+        "fr": "Hébergement et Infrastructure",
+        "en": "Hosting and Infrastructure"
+      },
+      "weight": 17,
+      "questions": [
+        {
+          "id": "host_001",
+          "text": {
+            "fr": "Quel est le type d'hébergement de l'application ?",
+            "en": "What is the application hosting type?"
+          },
+          "category": "hosting_infrastructure",
+          "weight": 3,
+          "standard": ["ISO 27001 A.11.1.1"],
+          "options": [
+            {"value": 0, "label": {"fr": "Hébergement non maîtrisé", "en": "Uncontrolled hosting"}},
+            {"value": 4, "label": {"fr": "Cloud public", "en": "Public cloud"}},
+            {"value": 7, "label": {"fr": "Cloud privé/hybride", "en": "Private/hybrid cloud"}},
+            {"value": 10, "label": {"fr": "Datacenter sécurisé certifié", "en": "Certified secure datacenter"}}
+          ]
+        },
+        {
+          "id": "host_002",
+          "text": {
+            "fr": "L'infrastructure est-elle redondée et hautement disponible ?",
+            "en": "Is the infrastructure redundant and highly available?"
+          },
+          "category": "hosting_infrastructure",
+          "weight": 4,
+          "standard": ["ISO 27001 A.17.2.1"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non", "en": "No"}},
+            {"value": 3, "label": {"fr": "Redondance partielle", "en": "Partial redundancy"}},
+            {"value": 7, "label": {"fr": "Haute disponibilité (HA)", "en": "High availability (HA)"}},
+            {"value": 10, "label": {"fr": "Multi-sites géographiques", "en": "Multi-geographic sites"}}
+          ]
+        },
+        {
+          "id": "host_003",
+          "text": {
+            "fr": "Des sauvegardes régulières sont-elles effectuées et testées ?",
+            "en": "Are regular backups performed and tested?"
+          },
+          "category": "hosting_infrastructure",
+          "weight": 5,
+          "standard": ["ISO 27001 A.12.3.1", "ANSSI"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non / Ne sait pas", "en": "No / Don't know"}},
+            {"value": 3, "label": {"fr": "Sauvegardes non testées", "en": "Untested backups"}},
+            {"value": 7, "label": {"fr": "Sauvegardes testées régulièrement", "en": "Regularly tested backups"}},
+            {"value": 10, "label": {"fr": "PRA/PCA documenté et testé", "en": "DRP/BCP documented and tested"}}
+          ]
+        },
+        {
+          "id": "host_004",
+          "text": {
+            "fr": "Les systèmes sont-ils maintenus à jour (patches de sécurité) ?",
+            "en": "Are systems kept up to date (security patches)?"
+          },
+          "category": "hosting_infrastructure",
+          "weight": 5,
+          "standard": ["OWASP A06", "ISO 27001 A.12.6.1"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non / Irrégulier", "en": "No / Irregular"}},
+            {"value": 4, "label": {"fr": "Patchs critiques uniquement", "en": "Critical patches only"}},
+            {"value": 8, "label": {"fr": "Process de patch régulier", "en": "Regular patching process"}},
+            {"value": 10, "label": {"fr": "Automatisation + surveillance", "en": "Automation + monitoring"}}
+          ]
+        },
+        {
+          "id": "host_005",
+          "text": {
+            "fr": "Un système de supervision et d'alertes est-il en place ?",
+            "en": "Is a monitoring and alerting system in place?"
+          },
+          "category": "hosting_infrastructure",
+          "weight": 4,
+          "standard": ["ISO 27001 A.12.4.1", "ANSSI"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non", "en": "No"}},
+            {"value": 3, "label": {"fr": "Supervision basique", "en": "Basic monitoring"}},
+            {"value": 7, "label": {"fr": "Supervision avancée + alertes", "en": "Advanced monitoring + alerts"}},
+            {"value": 10, "label": {"fr": "SIEM + corrélation + SOC", "en": "SIEM + correlation + SOC"}}
+          ]
+        },
+        {
+          "id": "host_006",
+          "text": {
+            "fr": "L'infrastructure utilise-t-elle des conteneurs/orchestration sécurisés ?",
+            "en": "Does the infrastructure use secure containers/orchestration?"
+          },
+          "category": "hosting_infrastructure",
+          "weight": 3,
+          "standard": ["OWASP", "ANSSI"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non / Serveurs traditionnels", "en": "No / Traditional servers"}},
+            {"value": 4, "label": {"fr": "Conteneurs sans durcissement", "en": "Containers without hardening"}},
+            {"value": 7, "label": {"fr": "Conteneurs durcis (Kubernetes sécurisé)", "en": "Hardened containers (secure Kubernetes)"}},
+            {"value": 10, "label": {"fr": "Orchestration sécurisée + scan images", "en": "Secure orchestration + image scanning"}}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data_security",
+      "name": {
+        "fr": "Sécurité des Données",
+        "en": "Data Security"
+      },
+      "weight": 18,
+      "questions": [
+        {
+          "id": "data_001",
+          "text": {
+            "fr": "Les données sensibles sont-elles chiffrées au repos ?",
+            "en": "Is sensitive data encrypted at rest?"
+          },
+          "category": "data_security",
+          "weight": 5,
+          "standard": ["OWASP A02", "ISO 27001 A.10.1.1", "ANSSI"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non", "en": "No"}},
+            {"value": 4, "label": {"fr": "Chiffrement partiel", "en": "Partial encryption"}},
+            {"value": 8, "label": {"fr": "Chiffrement complet (AES-256)", "en": "Full encryption (AES-256)"}},
+            {"value": 10, "label": {"fr": "Chiffrement + gestion clés HSM", "en": "Encryption + HSM key management"}}
+          ]
+        },
+        {
+          "id": "data_002",
+          "text": {
+            "fr": "Une classification des données est-elle appliquée ?",
+            "en": "Is data classification applied?"
+          },
+          "category": "data_security",
+          "weight": 4,
+          "standard": ["ISO 27001 A.8.2.1", "ANSSI"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non", "en": "No"}},
+            {"value": 3, "label": {"fr": "Classification informelle", "en": "Informal classification"}},
+            {"value": 7, "label": {"fr": "Classification formelle", "en": "Formal classification"}},
+            {"value": 10, "label": {"fr": "Classification + traçabilité", "en": "Classification + traceability"}}
+          ]
+        },
+        {
+          "id": "data_003",
+          "text": {
+            "fr": "Des mécanismes de prévention de fuite de données (DLP) sont-ils en place ?",
+            "en": "Are data loss prevention (DLP) mechanisms in place?"
+          },
+          "category": "data_security",
+          "weight": 4,
+          "standard": ["ISO 27001 A.13.2.3"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non", "en": "No"}},
+            {"value": 3, "label": {"fr": "Contrôles basiques", "en": "Basic controls"}},
+            {"value": 7, "label": {"fr": "DLP partiel", "en": "Partial DLP"}},
+            {"value": 10, "label": {"fr": "DLP complet + alertes", "en": "Complete DLP + alerts"}}
+          ]
+        },
+        {
+          "id": "data_004",
+          "text": {
+            "fr": "Les données personnelles respectent-elles le RGPD/Privacy by design ?",
+            "en": "Does personal data comply with GDPR/Privacy by design?"
+          },
+          "category": "data_security",
+          "weight": 5,
+          "standard": ["ISO 27001 A.18.1", "RGPD"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non évalué", "en": "Not evaluated"}},
+            {"value": 4, "label": {"fr": "Conformité partielle", "en": "Partial compliance"}},
+            {"value": 8, "label": {"fr": "Conforme RGPD", "en": "GDPR compliant"}},
+            {"value": 10, "label": {"fr": "Privacy by design + DPO", "en": "Privacy by design + DPO"}}
+          ]
+        },
+        {
+          "id": "data_005",
+          "text": {
+            "fr": "La rétention et la purge des données sont-elles gérées ?",
+            "en": "Are data retention and purge managed?"
+          },
+          "category": "data_security",
+          "weight": 3,
+          "standard": ["ISO 27001 A.8.3.2", "RGPD"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non", "en": "No"}},
+            {"value": 3, "label": {"fr": "Politique existante non appliquée", "en": "Policy exists but not applied"}},
+            {"value": 7, "label": {"fr": "Politique appliquée", "en": "Policy applied"}},
+            {"value": 10, "label": {"fr": "Automatisation + audit", "en": "Automation + audit"}}
+          ]
+        },
+        {
+          "id": "data_006",
+          "text": {
+            "fr": "Des audits de bases de données sont-ils réalisés ?",
+            "en": "Are database audits performed?"
+          },
+          "category": "data_security",
+          "weight": 4,
+          "standard": ["ISO 27001 A.12.4.1"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non", "en": "No"}},
+            {"value": 3, "label": {"fr": "Audits ponctuels", "en": "Ad-hoc audits"}},
+            {"value": 7, "label": {"fr": "Audits réguliers", "en": "Regular audits"}},
+            {"value": 10, "label": {"fr": "Audit continu + SIEM", "en": "Continuous audit + SIEM"}}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "application_security",
+      "name": {
+        "fr": "Sécurité Applicative",
+        "en": "Application Security"
+      },
+      "weight": 20,
+      "questions": [
+        {
+          "id": "app_001",
+          "text": {
+            "fr": "L'application est-elle testée contre les vulnérabilités OWASP Top 10 ?",
+            "en": "Is the application tested against OWASP Top 10 vulnerabilities?"
+          },
+          "category": "application_security",
+          "weight": 5,
+          "standard": ["OWASP Top 10"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non", "en": "No"}},
+            {"value": 4, "label": {"fr": "Tests ponctuels", "en": "Ad-hoc testing"}},
+            {"value": 8, "label": {"fr": "Tests réguliers (annuels)", "en": "Regular testing (annual)"}},
+            {"value": 10, "label": {"fr": "Tests continus + SAST/DAST", "en": "Continuous testing + SAST/DAST"}}
+          ]
+        },
+        {
+          "id": "app_002",
+          "text": {
+            "fr": "Un processus de développement sécurisé (SDL/SSDLC) est-il en place ?",
+            "en": "Is a secure development process (SDL/SSDLC) in place?"
+          },
+          "category": "application_security",
+          "weight": 4,
+          "standard": ["ISO 27001 A.14.2", "OWASP"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non", "en": "No"}},
+            {"value": 3, "label": {"fr": "Bonnes pratiques informelles", "en": "Informal best practices"}},
+            {"value": 7, "label": {"fr": "SSDLC formalisé", "en": "Formalized SSDLC"}},
+            {"value": 10, "label": {"fr": "SSDLC + DevSecOps", "en": "SSDLC + DevSecOps"}}
+          ]
+        },
+        {
+          "id": "app_003",
+          "text": {
+            "fr": "Les dépendances tierces sont-elles analysées (SCA - Software Composition Analysis) ?",
+            "en": "Are third-party dependencies analyzed (SCA - Software Composition Analysis)?"
+          },
+          "category": "application_security",
+          "weight": 5,
+          "standard": ["OWASP A06"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non", "en": "No"}},
+            {"value": 4, "label": {"fr": "Analyse ponctuelle", "en": "Ad-hoc analysis"}},
+            {"value": 8, "label": {"fr": "Analyse régulière", "en": "Regular analysis"}},
+            {"value": 10, "label": {"fr": "Analyse continue + mise à jour auto", "en": "Continuous analysis + auto-update"}}
+          ]
+        },
+        {
+          "id": "app_004",
+          "text": {
+            "fr": "Les entrées utilisateur sont-elles validées et échappées ?",
+            "en": "Are user inputs validated and escaped?"
+          },
+          "category": "application_security",
+          "weight": 5,
+          "standard": ["OWASP A03"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non / Partiellement", "en": "No / Partially"}},
+            {"value": 4, "label": {"fr": "Validation basique", "en": "Basic validation"}},
+            {"value": 8, "label": {"fr": "Validation stricte + échappement", "en": "Strict validation + escaping"}},
+            {"value": 10, "label": {"fr": "Framework sécurisé + WAF", "en": "Secure framework + WAF"}}
+          ]
+        },
+        {
+          "id": "app_005",
+          "text": {
+            "fr": "Des tests de sécurité sont-ils intégrés au CI/CD ?",
+            "en": "Are security tests integrated into CI/CD?"
+          },
+          "category": "application_security",
+          "weight": 4,
+          "standard": ["OWASP", "ISO 27001 A.14.2.8"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non", "en": "No"}},
+            {"value": 3, "label": {"fr": "Tests basiques (linting)", "en": "Basic tests (linting)"}},
+            {"value": 7, "label": {"fr": "SAST/DAST dans pipeline", "en": "SAST/DAST in pipeline"}},
+            {"value": 10, "label": {"fr": "Suite complète + blocage", "en": "Complete suite + blocking"}}
+          ]
+        },
+        {
+          "id": "app_006",
+          "text": {
+            "fr": "Un pentest externe est-il réalisé régulièrement ?",
+            "en": "Is external penetration testing performed regularly?"
+          },
+          "category": "application_security",
+          "weight": 4,
+          "standard": ["ISO 27001 A.14.2.8", "ANSSI"],
+          "options": [
+            {"value": 0, "label": {"fr": "Jamais", "en": "Never"}},
+            {"value": 3, "label": {"fr": "Une fois réalisé", "en": "Performed once"}},
+            {"value": 7, "label": {"fr": "Annuel", "en": "Annual"}},
+            {"value": 10, "label": {"fr": "Bi-annuel + bug bounty", "en": "Bi-annual + bug bounty"}}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "logging_monitoring",
+      "name": {
+        "fr": "Journalisation et Surveillance",
+        "en": "Logging and Monitoring"
+      },
+      "weight": 12,
+      "questions": [
+        {
+          "id": "log_001",
+          "text": {
+            "fr": "Les événements de sécurité sont-ils journalisés ?",
+            "en": "Are security events logged?"
+          },
+          "category": "logging_monitoring",
+          "weight": 5,
+          "standard": ["OWASP A09", "ISO 27001 A.12.4.1"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non / Minimal", "en": "No / Minimal"}},
+            {"value": 4, "label": {"fr": "Logs basiques", "en": "Basic logs"}},
+            {"value": 8, "label": {"fr": "Logs détaillés", "en": "Detailed logs"}},
+            {"value": 10, "label": {"fr": "Logs complets + SIEM", "en": "Complete logs + SIEM"}}
+          ]
+        },
+        {
+          "id": "log_002",
+          "text": {
+            "fr": "Les logs sont-ils protégés contre la modification/suppression ?",
+            "en": "Are logs protected against modification/deletion?"
+          },
+          "category": "logging_monitoring",
+          "weight": 4,
+          "standard": ["ISO 27001 A.12.4.2", "ANSSI"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non", "en": "No"}},
+            {"value": 3, "label": {"fr": "Protection basique", "en": "Basic protection"}},
+            {"value": 7, "label": {"fr": "Logs en lecture seule", "en": "Read-only logs"}},
+            {"value": 10, "label": {"fr": "Logs signés + centralisés", "en": "Signed + centralized logs"}}
+          ]
+        },
+        {
+          "id": "log_003",
+          "text": {
+            "fr": "Une corrélation et analyse des logs est-elle effectuée ?",
+            "en": "Is log correlation and analysis performed?"
+          },
+          "category": "logging_monitoring",
+          "weight": 4,
+          "standard": ["ISO 27001 A.12.4.1"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non", "en": "No"}},
+            {"value": 3, "label": {"fr": "Analyse manuelle", "en": "Manual analysis"}},
+            {"value": 7, "label": {"fr": "SIEM avec règles", "en": "SIEM with rules"}},
+            {"value": 10, "label": {"fr": "SIEM + IA/ML + SOC", "en": "SIEM + AI/ML + SOC"}}
+          ]
+        },
+        {
+          "id": "log_004",
+          "text": {
+            "fr": "Les logs sont-ils conservés selon une politique définie ?",
+            "en": "Are logs retained according to a defined policy?"
+          },
+          "category": "logging_monitoring",
+          "weight": 3,
+          "standard": ["ISO 27001 A.12.4.2"],
+          "options": [
+            {"value": 0, "label": {"fr": "Non défini", "en": "Not defined"}},
+            {"value": 3, "label": {"fr": "Rétention courte (<1 mois)", "en": "Short retention (<1 month)"}},
+            {"value": 7, "label": {"fr": "Rétention conforme (6-12 mois)", "en": "Compliant retention (6-12 months)"}},
+            {"value": 10, "label": {"fr": "Archivage long terme", "en": "Long-term archiving"}}
+          ]
+        }
+      ]
+    }
+  ]
+}
