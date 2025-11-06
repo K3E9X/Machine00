@@ -1,0 +1,36 @@
+name: Keep Streamlit App Alive
+
+on:
+  schedule:
+    # Ping l'app tous les jours à 8h UTC (9h Paris hiver, 10h Paris été)
+    - cron: '0 8 * * *'
+    # Ping également tous les 3 jours à 14h UTC pour sécurité
+    - cron: '0 14 */3 * *'
+
+  # Permet de lancer manuellement le workflow
+  workflow_dispatch:
+
+jobs:
+  ping-app:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ping Streamlit App
+        run: |
+          echo "🔔 Pinging app at $(date)"
+          response=$(curl -I -s -w "\n%{http_code}" https://app-security-audit.streamlit.app/)
+          status_code=$(echo "$response" | tail -n 1)
+
+          echo "📊 HTTP Status: $status_code"
+
+          if [ "$status_code" = "200" ]; then
+            echo "✅ App is alive and responding!"
+          else
+            echo "⚠️ App returned status code: $status_code"
+            echo "This might be normal if the app is waking up"
+          fi
+
+      - name: Send notification
+        run: |
+          echo "🎉 Keep-alive ping completed at $(date)"
+          echo "Next ping scheduled in cron schedule"
