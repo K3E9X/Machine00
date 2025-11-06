@@ -6,6 +6,13 @@ Professional security questionnaire for auditing web applications and infrastruc
 
 **Try it now:** https://app-security-audit.streamlit.app/
 
+
+<img width="1630" height="935" alt="image" src="https://github.com/user-attachments/assets/bfc48bf3-3e65-4ffa-9097-59828b529300" />
+
+
+
+
+
 No installation required - start evaluating applications immediately.
 
 ---
@@ -178,4 +185,3 @@ Internal security audit tool - Professional use
 
 ---
 
-**Built with [Claude Code](https://claude.com/claude-code)**
